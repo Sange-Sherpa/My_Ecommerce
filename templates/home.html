@@ -1,28 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+{% load static %}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+{% block styles %}
+    {{ block.super }}
+{% endblock styles %}
 
-    <title>Document</title>
-
-    <style>
-
-    </style>
-</head>
-<body>
-    {% include 'navbar.html' %}
+{% block content %}
     
-    {% block content %}
+    {% include 'assets/status.html' %}
 
-    {% endblock content %}
+    <div class="row mt-5">
+        <!-- CUSTOMERS -->
+        <div class="col-md-5">
+            <h5> Customers </h5>
+            <hr>
+            
+            <div class="card card-body">
+                <a href="#" class="btn btn-primary btn-sm btn-block"> Create Customer </a>
+                <table class="table table-sm mt-3">
+                    <tr>
+                        <th></th>
+                        <th> Customers </th>
+                        <th> Orders </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-    <h2>footer</h2>
-</body>
-</html>
+        <!-- ORDERS -->
+        <div class="col-md-7">
+            <h5> Orders </h5>
+            <hr>
+            
+            <div class="card card-body">
+                <a href="#" class="btn btn-primary btn-sm btn-block"> Create Order </a>
+                <table class="table table-sm mt-3">
+                    <tr>
+                        <th></th>
+                        <th> Product </th>
+                        <th> Date Ordered </th>
+                        <th> Status </th>
+                        <th> Update </th>
+                        <th> Remove </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    {{ block.super }}
+{% endblock scripts %}
